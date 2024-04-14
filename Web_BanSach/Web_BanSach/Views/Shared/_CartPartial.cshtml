@@ -1,0 +1,39 @@
+﻿@model BookCartViewModel
+<style>
+.dropdown-menu {
+		max-height: 300px; /* Đặt chiều cao tối đa cho giỏ hàng */
+		overflow-y: auto; /* Tạo thanh cuộn khi cần thiết */
+	}
+
+</style>
+
+
+<li class="dropdown">
+	<a class="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" asp-controller="Home" asp-action="Cart">
+		<i style="font-size:25px;" id="iconcart" class="bi bi-bag-fill iconcart"></i>
+	</a>
+
+	<ul class="dropdown-menu" style="background-color:white; width:auto; padding:10px;">
+
+		<div class="dropdown-item">
+			@foreach(var x in Model.Carts){
+			<div class="product">
+				<div class="image">
+					<img src="@x.Book.ImageUrl" alt="Sản phẩm 2">
+				</div>
+				<div class="info">
+					<p class="name">@x.Book.Tensach</p>
+					<p class="quantity">Số lượng: @x.Soluong</p>
+					<p class="price">Giá/sp: @x.Giatien</p>
+				</div>
+				<button class="remove">X</button>
+			</div>
+			}
+			<div class="total">
+				<p>Tạm tính: 102,000đ</p>
+				<button class="view-cart">Xem giỏ hàng</button>
+				<button class="checkout">Thanh toán</button>
+			</div>
+		</div>
+	</ul>
+</li>

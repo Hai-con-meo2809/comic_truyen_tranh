@@ -1,0 +1,193 @@
+﻿@model BookCartViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng của bạn</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+    <style>
+        .gio-hang {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .product-info {
+            display: flex;
+            align-items: center;
+        }
+
+            .product-info img {
+                width: 200px;
+                height: 100px;
+           
+                margin-right: 10px;
+            }
+
+        .product-details p {
+            margin: 0;
+        }
+
+        .product-details a {
+            color: red;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        input[type="number"] {
+            width: 50px;
+            padding: 5px;
+        }
+
+        .tong-tien {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+            margin-left: auto;
+        }
+
+            .tong-tien p {
+                margin: 0 5px;
+            }
+
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+
+
+        .cap-nhat {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .thanh-toan {
+            background-color: red;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .thanh-toan-vnpay{
+            background-color:blueviolet;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+            .quantity button {
+                background-color: transparent;
+                cursor: pointer;
+                padding: 10px;
+                font-size: 16px;
+                line-height: 1;
+                color: black;
+            }
+
+            .quantity input[type="number"] {
+                width: 50px;
+                padding: 5px;
+                text-align: center;
+                border: 1px solid #ccc;
+                font-size: 16px;
+            }
+
+
+        .ghi-chu textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form method="get" asp-controller="Payment" asp-action="Index">
+    <div class="gio-hang">
+
+
+
+        <h2>GIỎ HÀNG</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Tổng giá</th>
+                </tr>
+            </thead>
+            @foreach(var id  in Model.Carts){
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <img src="@id.Book.ImageUrl" alt="Product Image">
+                            <div class="product-details">
+                                <p>Tên sản phẩm</p>
+                                <p>Khuyến mãi: Mã giảm giá</p>
+
+                            </div>
+                        </div>
+                    </td>
+                    <td>@id.Giatien</td>
+                    <td>
+                        <div class="quantity">
+                            <button class="decrease">-</button>
+                            <input type="number" value="@id.Soluong">
+                            <button class="increase">+</button>
+                        </div>
+                    </td>
+                    <td>@id.Tongtien</td>
+                </tr>
+            </tbody>
+            }
+        </table>
+        <div class="tong-tien">
+            <p>Tạm tính</p>
+            <p>@ViewBag.tongtien</p>
+        </div>
+        <div class="ghi-chu">
+            <textarea placeholder="Ghi chú"></textarea>
+        </div>
+        <div class="buttons">
+            <button class="cap-nhat">Cập nhật</button>
+            <button class="thanh-toan">Thanh toán</button>
+            <button class="thanh-toan-vnpay">Thanh toán qua vnpay</button>
+        </div>
+
+    </div>
+    </form>
+</body>
+</html>
+

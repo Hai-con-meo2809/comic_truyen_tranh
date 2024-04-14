@@ -1,0 +1,66 @@
+﻿@model Web_BanSach.Models.Book
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tensach)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tensach)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TheloaiId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TheloaiId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TacgiaId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TacgiaId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Soluong)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Soluong)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Giatien)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Giatien)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ngayxuatban)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ngayxuatban)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MotaVesach)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MotaVesach)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Masach">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

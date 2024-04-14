@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "VNPAY Response";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <p>@ViewBag.Message</p>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.TerminalId))
+{
+    <p>@Html.Raw(ViewBag.TerminalId)</p>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.OrderId))
+{
+    <p>@Html.Raw(ViewBag.OrderId)</p>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.VnPayTranId))
+{
+    <p>@Html.Raw(ViewBag.VnPayTranId)</p>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Amount))
+{
+    <p>@Html.Raw(ViewBag.Amount)</p>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.BankCode))
+{
+    <p>@Html.Raw(ViewBag.BankCode)</p>
+}
+

@@ -1,0 +1,207 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1050px; /* Tăng kích thước container */
+    margin: 0 auto;
+    padding:0;
+    background-color: #fff;
+}
+
+.book-details {
+
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.book-cover img {
+    width: 500px;
+    height: 500px;
+    border: solid 0.5px black;
+}
+
+.book-info {
+    margin-left: 20px;
+}
+
+.book-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.price {
+    font-size: 20px;
+    color: #e74c3c;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+}
+
+
+
+.description-heading {
+    font-weight: bold;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.input-group {
+    align-items: center;
+}
+
+.quantity {
+    margin-bottom: 10px;
+}
+
+.quantity-minus,
+.quantity-plus {
+    color: black;
+    border: solid 1px black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin:  0px;
+}
+
+#quantity {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+}
+
+.quantity-minus:hover,
+.quantity-plus:hover {
+    background-color: #c0392b;
+}
+
+
+.add-to-cart,
+.buy-now,
+.wishlist-btn {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .add-to-cart:hover,
+    .buy-now:hover,
+    .wishlist-btn:hover {
+        background-color: #c0392b;
+    }
+
+.rating {
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+    .star:hover,
+    .star.active {
+        color: #f1c40f;
+    }
+
+.wishlist {
+    margin-top: 10px;
+}
+
+
+/* Thêm vào cuối tệp CSS */
+.wishlist-btns {
+    position: relative;
+    font-size: inherit; /* Kích thước mong muốn của trái tim */
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển động */
+    margin: 15px 30px;
+}
+
+.ratingvsfa {
+    display: flex; /* Hiển thị ngôi sao và trái tim cùng hàng */
+    margin-top: -30px;
+    border-bottom: solid 1px black;
+}
+
+
+/*dưới đây là css cho mục nhận xét */
+.review-container {
+    padding:25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto; /* Tự động thay đổi chiều rộng */
+    margin: 0 auto 20px auto; /* Đẩy container review sang giữa ngang */
+    margin-right: auto; /* Đẩy container review sang trái */
+}
+
+    .review-container .rating-container {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        margin-left:10px;
+        margin-top:-4px;
+    }
+
+    .review-container .star {
+        font-size: 24px;
+        color: #ffd700;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    .review-container .fa-star-o {
+        color: #ccc;
+    }
+
+    .review-container .review-text {
+        font-size: 20px;
+        display:flex;
+        margin-top:15px;
+        margin-left:10px;
+    }
+
+    .review-container .input-group {
+        margin-bottom: 15px;
+    }
+
+    .review-container input[type="text"],
+    .review-container input[type="email"],
+    .review-container input[type="tel"],
+    .review-container textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 5px;
+        box-sizing: border-box;
+    }
+
+    .review-container button {
+        padding: 10px 30px;
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+        .review-container button:hover {
+            background-color: #c0392b;
+        }
+

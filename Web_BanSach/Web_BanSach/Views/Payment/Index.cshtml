@@ -1,0 +1,80 @@
+﻿@model Cart
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VNPAY DEMO</title>
+    <link href="~/Styles/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <form method="post" asp-controller="Payment" asp-action="ProcessPayment">
+        <div class="jumbotron">
+            <h1>VNPAY DEMO</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 order-md-2 mb-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Đơn hàng</span>
+                        <span class="badge badge-secondary badge-pill">1</span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Tài khoản @ViewBag.taikhoan </h6>
+                                <small class="text-muted">Mã Khách: </small>
+                            </div>
+                            @* <span class="text-muted">Mã Sách: @Model.Masach</span> *@
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                           
+                                <small class="text-muted">Giá tiền:</small>
+                            </div>
+                            <span class="text-muted">Tổng tiền: @ViewBag.tongtien</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>ID Users: @Model.IDUsers</span>
+                         
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+                <div class="col-md-8 order-md-1">
+                    <h4>Chọn phương thức thanh toán:</h4>
+                    <div class="d-block my-3">
+                        <h5 class="mb-3">Cách 1: Chuyển hướng sang VNPAY chọn phương thức thanh toán</h5>
+                        <div class="custom-control custom-radio">
+                            <input  type="radio" class="custom-control-input" id="bankcode_Default" value="VNPAYQR" checked>
+                            <label class="custom-control-label" for="bankcode_Default">Cổng thanh toán VNPAYQR</label><br />
+                        </div>
+                        /////////////
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="bankcode_Vnpayqr" value="VNPAYQR">
+                            <label class="custom-control-label" for="bankcode_Vnpayqr">Thanh toán qua ứng dụng hỗ trợ VNPAYQR</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input  type="radio" class="custom-control-input" id="bankcode_Vnbank" value="VNPAYQR">
+                            <label class="custom-control-label" for="bankcode_Vnbank">ATM-Tài khoản ngân hàng nội địa</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input  type="radio" class="custom-control-input" id="bankcode_Intcard" value="VNPAYQR">
+                            <label class="custom-control-label" for="bankcode_Intcard">Thanh toán qua thẻ quốc tế</label>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">Thanh toán</button>
+                </div>
+            </div>
+            <p>&nbsp;</p>
+            <footer class="footer">
+                <p>&copy; VNPAY 2020</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
+
